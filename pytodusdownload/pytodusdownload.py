@@ -5,6 +5,7 @@ import pickle
 import re
 import sys
 
+import requests
 from tqdm import tqdm
 from todus import client
 from todus.s3 import get_real_url
@@ -74,7 +75,22 @@ def fetch_or_resume(todus_client, token, url, filename, output_dir):
         pos = f.tell()
         if pos:
             headers['Range'] = f'bytes={pos}-'
-        response = todus_client.session.get(url, headers=headers, stream=True)
+
+        try:
+            response = todus_client.session.get(url, headers=headers, stream=True)
+            response.raise_for_status()
+        except requests.exceptions.Timeout:
+            print('{filename} ERROR: Request Timeout'.format(filename=filename))
+            return
+        except requests.exceptions.TooManyRedirects:
+            print('{filename} ERROR: Too many redirects'.format(filename=filename))
+            return
+        except requests.exceptions.HTTPError as err:
+            print('{filename} ERROR: {err}'.format(filename=filename, err=err))
+            return
+        except requests.exceptions.RequestException as e:
+            print('{filename} ERROR: Unknown Error'.format(filename=filename))
+            return
 
         total_size_in_bytes= int(response.headers.get('content-length', 0))
         block_size = 1024 #1 Kibibyte
