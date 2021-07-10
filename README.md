@@ -1,5 +1,15 @@
 # pytodusdownload
 
+
+***
+
+Esta herramienta no está terminada y puede tener problemas. 
+
+Tenganse en cuenta que el mecanizmo utilizado para almacenar 
+el token no es seguro y debe ser muy cuidadoso.
+
+***
+
 Descargar ficheros de ToDus (comunmente llamado S3) de forma sencilla
 
 ## Requerimentos
