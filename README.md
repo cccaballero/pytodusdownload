@@ -13,13 +13,13 @@ para instalar via pip ejecute:
 `pip install git+https://github.com/cccaballero/pytodusdownload@master#egg=pytodusdownload`
 
 
-## Modo de uso
+### Modo de uso
 
 ```shell
 pytodusdownload /ruta/del/fichero/de/enlaces.txt
 ```
 
-## Ayuda
+### Ayuda
 
 ```shell
 pytodusdownload --help
