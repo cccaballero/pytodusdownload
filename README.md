@@ -1,12 +1,9 @@
 # pytodusdownload
 
 
-***
+***Esta herramienta no está terminada y puede tener problemas.*** 
 
-Esta herramienta no está terminada y puede tener problemas. 
-
-Tenganse en cuenta que el mecanizmo utilizado para almacenar 
-el token no es seguro y debe ser muy cuidadoso.
+***Tenganse en cuenta que el mecanizmo utilizado para almacenar el token no es seguro y debe ser muy cuidadoso.***
 
 ***
 
