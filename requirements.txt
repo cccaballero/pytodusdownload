@@ -1,3 +1,0 @@
-requests==2.25.1
-tqdm==4.60.0
-todus==0.1.0
